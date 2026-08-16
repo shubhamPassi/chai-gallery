@@ -71,7 +71,7 @@ const menu = [
     group: "beverages",
     illustration: "mojito.png",
     items: [
-      { name: "Nimbu Pani", price: "₹69" },
+      { name: "Nimbu Pani", price: "₹49" },
       { name: "Virgin Mojito", price: "₹99" },
       { name: "Jaljeera Lemonade", price: "₹99" },
       { name: "Masala Lemonade", price: "₹99" },
@@ -97,14 +97,15 @@ const menu = [
   },
   {
     id: "sandwiches",
-    title: "Sandwiches",
+    title: "Sandwich",
     group: "food",
     illustration: "sandwich.png",
     items: [
-      { name: "Grill", price: "₹109" },
-      { name: "Cheese", price: "₹129" },
-      { name: "Paneer", price: "₹149" },
-      { name: "Pizza", price: "₹199" }
+      { name: "Tandoori Masala", price: "₹109" },
+      { name: "Special Makhani", price: "₹129" },
+      { name: "Cheesy Melt", price: "₹139" },
+      { name: "Chatpata Achari", price: "₹149" },
+      { name: "Pizza-Style", price: "₹159" }
     ]
   },
   {
@@ -113,12 +114,10 @@ const menu = [
     group: "food",
     illustration: "sub-sandwich.png",
     items: [
-      { name: "Grill", price: "₹109" },
-      { name: "Paneer", price: "₹109" },
-      { name: "Makhani Special", price: "₹129" },
-      { name: "Cheese", price: "₹129" },
-      { name: "Pizza", price: "₹149" },
-      { name: "Achari Special", price: "₹149" }
+      { name: "Creamy Makhani", price: "₹230" },
+      { name: "Chatpata Achari", price: "₹230" },
+      { name: "Smoky BBQ", price: "₹270" },
+      { name: "Maharaja Jumbo", price: "₹300" }
     ]
   },
   {
@@ -142,7 +141,7 @@ const menu = [
     title: "Pasta",
     group: "food",
     illustration: "pasta.png",
-    sizeLabels: ["Half", "Full"],
+    sizeLabels: ["H", "F"],
     items: [
       { name: "Red Sauce", prices: ["₹149", "₹219"] },
       { name: "White Sauce", prices: ["₹159", "₹229"] },
@@ -175,7 +174,7 @@ const menu = [
   },
   {
     id: "fries",
-    title: "French Fries",
+    title: "Fries",
     group: "food",
     illustration: "fries.png",
     items: [
@@ -194,8 +193,20 @@ const menu = [
     items: [
       { name: "Maska Bun", price: "₹40" },
       { name: "Cake Rusk", price: "₹20" },
-      { name: "Fan", price: "₹20" },
+      { name: "Fan", price: "₹10" },
       { name: "Bisleri", price: "MRP" }
+    ]
+  },
+  {
+    id: "desserts",
+    title: "Desserts",
+    group: "food",
+    illustration: "sub-sandwich.png",
+    items: [
+      { name: "Warm Chocolate Brownie", price: "₹79" },
+      { name: "Chocolate Melt Sandwich", price: "₹119" },
+      { name: "Milkybar White Chocolate Sandwich", price: "₹129" },
+      { name: "Brownie Bliss with Ice Cream", price: "₹139" }
     ]
   }
 ];

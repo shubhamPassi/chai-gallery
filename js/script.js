@@ -1,0 +1,440 @@
+/*
+ * CHAI GALLERY MENU DATA
+ * Edit item names and prices here. Use `prices: ["₹30", "₹45"]` for two sizes.
+ * Illustration filenames are replaceable in assets/images/menu-art/.
+ */
+const menu = [
+  {
+    id: "chai",
+    title: "Chai",
+    group: "beverages",
+    illustration: "hero-chai.png",
+    sizeLabels: ["M", "L"],
+    items: [
+      { name: "Adrak", prices: ["₹30", "₹45"] },
+      { name: "Rose", prices: ["₹30", "₹45"] },
+      { name: "Chocolate", prices: ["₹30", "₹45"] },
+      { name: "Gurh", prices: ["₹30", "₹45"] },
+      { name: "Elaichi", prices: ["₹35", "₹50"] },
+      { name: "Adrak + Elaichi", prices: ["₹35", "₹50"] },
+      { name: "Rajwadi", prices: ["₹35", "₹50"] },
+      { name: "Butter", prices: ["₹50", "₹70"] }
+    ]
+  },
+  {
+    id: "hot-coffee",
+    title: "Hot Coffee",
+    group: "beverages",
+    illustration: "hot-coffee.png",
+    items: [
+      { name: "Classic", price: "₹50" },
+      { name: "Americano", price: "₹50" },
+      { name: "Choco Mocha", price: "₹60" },
+      { name: "Caramel Bliss", price: "₹100" },
+      { name: "Hazelnut Delight", price: "₹100" },
+      { name: "Vanilla Brew", price: "₹100" },
+      { name: "Belgian Choco", price: "₹120" },
+      { name: "Biscoff Rush", price: "₹120" },
+      { name: "Arabica Brew", price: "₹120" }
+    ]
+  },
+  {
+    id: "cold-coffee",
+    title: "Cold Coffee",
+    group: "beverages",
+    illustration: "cold-coffee.png",
+    items: [
+      { name: "Caramel Crown", price: "₹119" },
+      { name: "Hazel Bliss", price: "₹119" },
+      { name: "Vanilla Dream", price: "₹119" },
+      { name: "Arabica Classic", price: "₹129" },
+      { name: "Belgian Choco", price: "₹129" },
+      { name: "Biscoff Royal", price: "₹149" }
+    ]
+  },
+  {
+    id: "shakes",
+    title: "Shakes",
+    group: "beverages",
+    illustration: "shake.png",
+    items: [
+      { name: "Oreo", price: "₹119" },
+      { name: "Black Forest", price: "₹119" },
+      { name: "Vanilla", price: "₹119" },
+      { name: "Strawberry", price: "₹139" },
+      { name: "Kit Kat", price: "₹149" }
+    ]
+  },
+  {
+    id: "mojitos",
+    title: "Coolers",
+    group: "beverages",
+    illustration: "mojito.png",
+    items: [
+      { name: "Nimbu Pani", price: "₹69" },
+      { name: "Virgin Mojito", price: "₹99" },
+      { name: "Jaljeera Lemonade", price: "₹99" },
+      { name: "Masala Lemonade", price: "₹99" },
+      { name: "Green Apple Mojito", price: "₹99" },
+      { name: "Watermelon Mojito", price: "₹99" },
+      { name: "Cranberry Mojito", price: "₹99" }
+    ]
+  },
+  {
+    id: "burgers",
+    title: "Burgers",
+    group: "food",
+    illustration: "burger.png",
+    items: [
+      { name: "Aloo Tikki", price: "₹59" },
+      { name: "Grill", price: "₹69" },
+      { name: "Veg Burger", price: "₹79" },
+      { name: "Cheese", price: "₹99" },
+      { name: "Makhani", price: "₹119" },
+      { name: "Achari", price: "₹119" },
+      { name: "Monster King", price: "₹149" }
+    ]
+  },
+  {
+    id: "sandwiches",
+    title: "Sandwiches",
+    group: "food",
+    illustration: "sandwich.png",
+    items: [
+      { name: "Grill", price: "₹109" },
+      { name: "Cheese", price: "₹129" },
+      { name: "Paneer", price: "₹149" },
+      { name: "Pizza", price: "₹199" }
+    ]
+  },
+  {
+    id: "sub-sandwiches",
+    title: "Sub Sandwich",
+    group: "food",
+    illustration: "sub-sandwich.png",
+    items: [
+      { name: "Grill", price: "₹109" },
+      { name: "Paneer", price: "₹109" },
+      { name: "Makhani Special", price: "₹129" },
+      { name: "Cheese", price: "₹129" },
+      { name: "Pizza", price: "₹149" },
+      { name: "Achari Special", price: "₹149" }
+    ]
+  },
+  {
+    id: "pizza",
+    title: "Pizza",
+    group: "food",
+    illustration: "pizza.png",
+    sizeLabels: ["R", "M"],
+    items: [
+      { name: "Onion Crunch Pizza", prices: ["₹149", "₹229"] },
+      { name: "Capsicum Delight", prices: ["₹149", "₹229"] },
+      { name: "Tomato Twist", prices: ["₹149", "₹229"] },
+      { name: "Golden Corn Delight", prices: ["₹149", "₹229"] },
+      { name: "Cheesy Classic", prices: ["₹169", "₹249"] },
+      { name: "Paneer Supreme", prices: ["₹169", "₹249"] },
+      { name: "Monster King", prices: ["₹219", "₹299"] }
+    ]
+  },
+  {
+    id: "pasta",
+    title: "Pasta",
+    group: "food",
+    illustration: "pasta.png",
+    sizeLabels: ["Half", "Full"],
+    items: [
+      { name: "Red Sauce", prices: ["₹149", "₹219"] },
+      { name: "White Sauce", prices: ["₹159", "₹229"] },
+      { name: "Mix Sauce", prices: ["₹169", "₹239"] }
+    ]
+  },
+  {
+    id: "maggi",
+    title: "Maggi",
+    group: "food",
+    illustration: "maggi.png",
+    items: [
+      { name: "Plain Maggi", price: "₹49" },
+      { name: "Double Maggi", price: "₹89" },
+      { name: "Veggies Maggi", price: "₹99" },
+      { name: "Cheese Maggi", price: "₹119" }
+    ]
+  },
+  {
+    id: "garlic-bread",
+    title: "Garlic Bread",
+    group: "food",
+    illustration: "garlic-bread.png",
+    items: [
+      { name: "Garlic Bread", price: "₹129" },
+      { name: "Garlic Toast", price: "₹129" },
+      { name: "Stuffed Garlic Bread", price: "₹149" },
+      { name: "Paneer Garlic Bread", price: "₹169" }
+    ]
+  },
+  {
+    id: "fries",
+    title: "French Fries",
+    group: "food",
+    illustration: "fries.png",
+    items: [
+      { name: "Plain Fries", price: "₹99" },
+      { name: "Tandoori Fries", price: "₹119" },
+      { name: "Peri Peri Fries", price: "₹129" },
+      { name: "Cheese Fries", price: "₹139" },
+      { name: "Mint Fries", price: "₹149" }
+    ]
+  },
+  {
+    id: "others",
+    title: "Others",
+    group: "food",
+    illustration: "hero-chai.png",
+    items: [
+      { name: "Maska Bun", price: "₹40" },
+      { name: "Cake Rusk", price: "₹20" },
+      { name: "Fan", price: "₹20" },
+      { name: "Bisleri", price: "MRP" }
+    ]
+  }
+];
+
+const favourites = [
+  { id: "chai", title: "Adrak Elaichi Chai", note: "Warm, familiar and made for one more round." },
+  { id: "pizza", title: "Monster King Pizza", note: "Big café comfort for a table full of cravings." },
+  { id: "burgers", title: "Monster King Burger", note: "The hungry-person answer to a quick coffee plan." },
+  { id: "cold-coffee", title: "Biscoff Royal", note: "Cold, creamy and exactly the break you needed." }
+];
+
+const escapeHTML = (value) => String(value)
+  .replaceAll("&", "&amp;")
+  .replaceAll("<", "&lt;")
+  .replaceAll(">", "&gt;")
+  .replaceAll('"', "&quot;")
+  .replaceAll("'", "&#039;");
+
+function renderMenu(filter = "all") {
+  const grid = document.querySelector("[data-menu-grid]");
+  if (!grid) return;
+
+  const visibleMenu = filter === "all" ? menu : menu.filter((category) => category.group === filter);
+  grid.innerHTML = visibleMenu.map((category, index) => {
+    const hasSizes = Array.isArray(category.sizeLabels);
+    const rows = category.items.map((item) => {
+      if (hasSizes) {
+        return `
+          <div class="menu-row has-sizes">
+            <span class="menu-item-name">${escapeHTML(item.name)}</span>
+            <span class="menu-dots" aria-hidden="true"></span>
+            ${item.prices.map((price) => `<span class="menu-price">${escapeHTML(price)}</span>`).join("")}
+          </div>`;
+      }
+      return `
+        <div class="menu-row">
+          <span class="menu-item-name">${escapeHTML(item.name)}</span>
+          <span class="menu-dots" aria-hidden="true"></span>
+          <span class="menu-price">${escapeHTML(item.price)}</span>
+        </div>`;
+    }).join("");
+
+    const sizes = hasSizes
+      ? `<div class="menu-sizes"><span></span>${category.sizeLabels.map((label) => `<span>${escapeHTML(label)}</span>`).join("")}</div>`
+      : "";
+
+    return `
+      <article class="menu-card is-entering" data-group="${category.group}" aria-labelledby="${category.id}-title">
+        <div class="menu-illustration" data-index="${String(index + 1).padStart(2, "0")}">
+          <img src="assets/images/menu-art/${category.illustration}" width="220" height="220" loading="lazy" alt="Chalk-style menu artwork for ${escapeHTML(category.title)}">
+        </div>
+        <div class="menu-content">
+          <header>
+            <h3 id="${category.id}-title">${escapeHTML(category.title)}</h3>
+            <span class="menu-type">${category.group === "food" ? "Quick bite" : "Beverage"}</span>
+          </header>
+          ${sizes}
+          ${rows}
+        </div>
+      </article>`;
+  }).join("");
+
+  requestAnimationFrame(() => {
+    grid.querySelectorAll(".is-entering").forEach((card, index) => {
+      window.setTimeout(() => card.classList.remove("is-entering"), index * 32);
+    });
+  });
+}
+
+function renderFavourites() {
+  const grid = document.querySelector("[data-favourites]");
+  if (!grid) return;
+  grid.innerHTML = favourites.map((favourite, index) => {
+    const category = menu.find((item) => item.id === favourite.id);
+    return `
+      <article class="favourite-card">
+        <span class="favourite-card-number">FAVOURITE / ${String(index + 1).padStart(2, "0")}</span>
+        <img src="assets/images/menu-art/${category.illustration}" width="280" height="250" loading="lazy" alt="Chalk-style artwork for ${escapeHTML(favourite.title)}">
+        <div>
+          <h3>${escapeHTML(favourite.title)}</h3>
+          <p>${escapeHTML(favourite.note)}</p>
+        </div>
+      </article>`;
+  }).join("");
+}
+
+function initNavigation() {
+  const header = document.querySelector("[data-header]");
+  const toggle = document.querySelector("[data-nav-toggle]");
+  const nav = document.querySelector("[data-nav]");
+  if (!header || !toggle || !nav) return;
+
+  const closeMenu = () => {
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open navigation");
+    nav.classList.remove("is-open");
+  };
+
+  toggle.addEventListener("click", () => {
+    const willOpen = toggle.getAttribute("aria-expanded") !== "true";
+    toggle.setAttribute("aria-expanded", String(willOpen));
+    toggle.setAttribute("aria-label", willOpen ? "Close navigation" : "Open navigation");
+    nav.classList.toggle("is-open", willOpen);
+  });
+
+  nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+  document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeMenu(); });
+  window.addEventListener("scroll", () => header.classList.toggle("is-scrolled", window.scrollY > 24), { passive: true });
+}
+
+function initMenuFilter() {
+  const filter = document.querySelector("[data-menu-filter]");
+  if (!filter) return;
+  filter.addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-filter]");
+    if (!button) return;
+    filter.querySelectorAll("button").forEach((item) => {
+      const isActive = item === button;
+      item.classList.toggle("is-active", isActive);
+      item.setAttribute("aria-pressed", String(isActive));
+    });
+    renderMenu(button.dataset.filter);
+  });
+}
+
+function initReveal() {
+  const elements = document.querySelectorAll("[data-reveal]");
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
+    elements.forEach((element) => element.classList.add("is-visible"));
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -35px" });
+  elements.forEach((element) => observer.observe(element));
+}
+
+function initActiveNavigation() {
+  const links = [...document.querySelectorAll(".primary-nav a")];
+  const sections = links.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+  if (!("IntersectionObserver" in window)) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      links.forEach((link) => link.classList.toggle("is-active", link.getAttribute("href") === `#${entry.target.id}`));
+    });
+  }, { rootMargin: "-35% 0px -58%", threshold: 0 });
+  sections.forEach((section) => observer.observe(section));
+}
+
+function initDisabledLinks() {
+  document.querySelectorAll('a[aria-disabled="true"]').forEach((link) => {
+    link.addEventListener("click", (event) => event.preventDefault());
+  });
+}
+
+function initMenuZoom() {
+  const viewer = document.querySelector("[data-menu-zoom]");
+  if (!viewer) return;
+
+  const frame = viewer.querySelector(".menu-artwork-frame");
+  const image = viewer.querySelector("[data-zoom-image]");
+  const zoomIn = viewer.querySelector("[data-zoom-in]");
+  const zoomOut = viewer.querySelector("[data-zoom-out]");
+  const zoomReset = viewer.querySelector("[data-zoom-reset]");
+  const zoomLevel = viewer.querySelector("[data-zoom-level]");
+  if (!frame || !image || !zoomIn || !zoomOut || !zoomReset || !zoomLevel) return;
+
+  let zoom = 1;
+  let isDragging = false;
+  let dragStartX = 0;
+  let dragStartY = 0;
+  let scrollStartX = 0;
+  let scrollStartY = 0;
+
+  const setZoom = (nextZoom) => {
+    zoom = Math.min(2.6, Math.max(1, Number(nextZoom.toFixed(2))));
+    image.style.setProperty("--menu-zoom-width", `${zoom * 100}%`);
+    zoomLevel.textContent = `${Math.round(zoom * 100)}%`;
+    frame.classList.toggle("is-zoomed", zoom > 1);
+    zoomOut.disabled = zoom <= 1;
+    zoomReset.disabled = zoom <= 1;
+    zoomIn.disabled = zoom >= 2.6;
+  };
+
+  const zoomFromCenter = (amount) => {
+    const before = zoom;
+    const centerX = frame.scrollLeft + frame.clientWidth / 2;
+    const centerY = frame.scrollTop + frame.clientHeight / 2;
+    setZoom(zoom + amount);
+    const ratio = zoom / before;
+    frame.scrollLeft = centerX * ratio - frame.clientWidth / 2;
+    frame.scrollTop = centerY * ratio - frame.clientHeight / 2;
+  };
+
+  zoomIn.addEventListener("click", () => zoomFromCenter(0.2));
+  zoomOut.addEventListener("click", () => zoomFromCenter(-0.2));
+  zoomReset.addEventListener("click", () => {
+    setZoom(1);
+    frame.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+  });
+
+  frame.addEventListener("wheel", (event) => {
+    if (!event.ctrlKey) return;
+    event.preventDefault();
+    zoomFromCenter(event.deltaY < 0 ? 0.14 : -0.14);
+  }, { passive: false });
+
+  frame.addEventListener("pointerdown", (event) => {
+    if (zoom <= 1) return;
+    isDragging = true;
+    dragStartX = event.clientX;
+    dragStartY = event.clientY;
+    scrollStartX = frame.scrollLeft;
+    scrollStartY = frame.scrollTop;
+    frame.setPointerCapture(event.pointerId);
+  });
+
+  frame.addEventListener("pointermove", (event) => {
+    if (!isDragging) return;
+    frame.scrollLeft = scrollStartX - (event.clientX - dragStartX);
+    frame.scrollTop = scrollStartY - (event.clientY - dragStartY);
+  });
+
+  frame.addEventListener("pointerup", () => { isDragging = false; });
+  frame.addEventListener("pointercancel", () => { isDragging = false; });
+  setZoom(1);
+}
+
+renderMenu();
+renderFavourites();
+initNavigation();
+initMenuFilter();
+initReveal();
+initActiveNavigation();
+initDisabledLinks();
+initMenuZoom();
+document.querySelector("[data-year]").textContent = new Date().getFullYear();

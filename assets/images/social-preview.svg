@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <filter id="grain"><feTurbulence baseFrequency=".7" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 .12 0"/></filter>
+  </defs>
+  <rect width="1200" height="630" fill="#11110f"/>
+  <rect x="28" y="28" width="1144" height="574" fill="none" stroke="#f5f1e8" stroke-opacity=".45"/>
+  <path d="M74 91h280M846 91h280M74 540h280M846 540h280" stroke="#d98a3a" stroke-width="3"/>
+  <g transform="translate(782 120) scale(1.1)" fill="none" stroke="#F5F1E8" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="4" d="M79 133h157l-15 120c-2 13-12 22-25 22h-76c-13 0-23-9-25-22L79 133Z"/>
+    <path stroke-width="3" d="M77 124c0-9 8-16 18-16h127c10 0 18 7 18 16 0 7-8 13-18 13H95c-10 0-18-6-18-13Z"/>
+    <path stroke-width="3" d="M111 89c-16-19 12-30-3-49M159 91c-19-20 17-32-2-56M204 91c-16-18 13-27 0-45"/>
+  </g>
+  <text x="80" y="218" fill="#d98a3a" font-family="Impact,Arial Narrow,sans-serif" font-size="94" letter-spacing="4">CHAI</text>
+  <text x="80" y="321" fill="#f5f1e8" font-family="Impact,Arial Narrow,sans-serif" font-size="94" letter-spacing="4">GALLERY</text>
+  <text x="84" y="385" fill="#c9c5bc" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="700" letter-spacing="7">CHAI • COFFEE • QUICK BITES</text>
+  <text x="84" y="458" fill="#f5f1e8" font-family="Segoe UI,Arial,sans-serif" font-size="27">Hari Nagar, West Delhi</text>
+  <rect width="1200" height="630" filter="url(#grain)" opacity=".24"/>
+</svg>

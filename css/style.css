@@ -365,7 +365,7 @@ h2 em { color: var(--accent); font-style: normal; }
   cursor: grab;
   scrollbar-color: var(--accent) var(--board-soft);
   scrollbar-width: thin;
-  overscroll-behavior: contain;
+  overscroll-behavior: auto;
 }
 
 .menu-artwork-frame:active { cursor: grabbing; }

@@ -201,7 +201,7 @@ const menu = [
     id: "desserts",
     title: "Desserts",
     group: "food",
-    illustration: "sub-sandwich.png",
+    illustration: "desserts.png",
     items: [
       { name: "Warm Chocolate Brownie", price: "₹79" },
       { name: "Chocolate Melt Sandwich", price: "₹119" },

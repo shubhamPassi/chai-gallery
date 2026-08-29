@@ -1,0 +1,16 @@
+name = "chai-gallery-orders"
+main = "src/index.js"
+compatibility_date = "2026-08-30"
+
+[vars]
+# Comma-separated production origins. Add localhost only while testing.
+ALLOWED_ORIGINS = "https://www.chaigallery.in,https://chaigallery.in"
+
+[secrets]
+required = ["RAZORPAY_KEY_ID", "RAZORPAY_KEY_SECRET", "SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY"]
+
+[env.dev]
+name = "chai-gallery-orders-dev"
+
+[env.dev.vars]
+ALLOWED_ORIGINS = "https://dev.chaigallery.in"

@@ -30,6 +30,10 @@
   <link rel="preload" href="assets/images/menu-art/hero-chai.png" as="image">
   <link rel="preload" href="assets/images/chai-gallery-logo.png" as="image">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    window.CHAI_GALLERY_CONFIG = { apiBase: "https://api.dev.chaigallery.in" };
+  </script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
 
   <script type="application/ld+json">
   {
@@ -78,6 +82,7 @@
         <a href="#why-us">Why us</a>
         <a href="#location">Location</a>
         <a href="#contact">Contact</a>
+        <button class="nav-order-button" type="button" data-open-cart>Order online <span data-cart-count>0</span></button>
       </nav>
     </div>
   </header>
@@ -92,6 +97,7 @@
           <p class="hero-intro">A cozy corner in Hari Nagar for conversation, comfort food and one more cup. Come hungry. Leave happier.</p>
           <div class="button-row">
             <a class="button button-primary" href="#menu">View menu <span aria-hidden="true">↘</span></a>
+            <button class="button button-ghost" type="button" data-open-cart>Order online <span aria-hidden="true">→</span></button>
             <a class="button button-ghost" href="#location">Visit us <span aria-hidden="true">→</span></a>
           </div>
           <div class="hero-note" aria-label="Cafe highlights">
@@ -262,6 +268,45 @@
     </section>
   </main>
 
+  <button class="cart-dock" type="button" data-open-cart hidden aria-label="Open your cart">
+    <span data-cart-summary>Your cart is empty</span><strong>View cart →</strong>
+  </button>
+
+  <dialog class="order-dialog" data-order-dialog aria-labelledby="order-dialog-title">
+    <div class="order-dialog-inner">
+      <button class="dialog-close" type="button" data-close-cart aria-label="Close order checkout">×</button>
+      <div class="order-dialog-heading">
+        <p class="eyebrow"><span></span> Order online</p>
+        <h2 id="order-dialog-title">YOUR <em>ORDER</em></h2>
+      </div>
+      <div class="order-layout">
+        <section class="cart-panel" aria-label="Cart items">
+          <div data-cart-items></div>
+          <p class="cart-empty" data-cart-empty>Add items from the menu to begin your order.</p>
+          <dl class="order-totals">
+            <div><dt>Items</dt><dd data-subtotal>₹0</dd></div>
+            <div><dt>Delivery</dt><dd data-delivery>—</dd></div>
+            <div class="total"><dt>Total</dt><dd data-total>₹0</dd></div>
+          </dl>
+        </section>
+        <form class="checkout-form" data-checkout-form>
+          <p class="form-note">Home delivery is available in selected nearby postcodes. Delivery fee is confirmed before payment.</p>
+          <label>Name<input name="name" autocomplete="name" required maxlength="80"></label>
+          <label>Mobile number<input name="phone" type="tel" autocomplete="tel" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number"></label>
+          <label>Delivery address<textarea name="address" autocomplete="street-address" required maxlength="300" rows="3" placeholder="House/flat, street, area"></textarea></label>
+          <div class="form-two-col">
+            <label>Landmark <input name="landmark" maxlength="100" placeholder="Optional"></label>
+            <label>Pincode<input name="pincode" autocomplete="postal-code" required inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="1100XX"></label>
+          </div>
+          <label>Instructions<textarea name="instructions" maxlength="240" rows="2" placeholder="Optional"></textarea></label>
+          <p class="checkout-status" data-checkout-status role="status" aria-live="polite"></p>
+          <button class="button button-primary checkout-pay" type="submit" data-pay-button disabled>Pay securely</button>
+          <p class="payment-note">Payments are processed securely by Razorpay. Your order is confirmed only after payment verification.</p>
+        </form>
+      </div>
+    </div>
+  </dialog>
+
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
@@ -289,6 +334,6 @@
   </footer>
 
   <noscript><p class="noscript">Please enable JavaScript to view the full café menu.</p></noscript>
-  <script src="js/script.js" defer></script>
+  <script type="module" src="js/script.js"></script>
 </body>
 </html>

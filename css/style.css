@@ -276,6 +276,42 @@ h2 em { color: var(--accent); font-style: normal; }
 .menu-dots { min-width: 12px; border-bottom: 1px dotted rgba(245,241,232,.34); transform: translateY(-.2rem); }
 .menu-price { color: var(--chalk-bright); font-family: var(--font-display); font-weight: 700; letter-spacing: .03em; text-align: right; white-space: nowrap; }
 .menu-price.placeholder { color: var(--muted); }
+.menu-add { padding: 0; border: 0; background: transparent; cursor: pointer; }
+.menu-add b { display: inline-grid; width: 18px; height: 18px; place-items: center; margin-left: .2rem; color: var(--board); border-radius: 50%; background: var(--accent); font-family: var(--font-body); }
+.menu-add:hover, .menu-add:focus-visible { color: var(--accent-bright); }
+.nav-order-button { min-height: 38px; padding: .45rem .75rem; color: var(--board); border: 0; background: var(--accent); font-size: .68rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
+.nav-order-button span { display: inline-grid; min-width: 1.4rem; height: 1.4rem; place-items: center; margin-left: .35rem; color: var(--chalk); border-radius: 50%; background: var(--board); }
+.cart-dock { position: fixed; z-index: 80; right: 1.25rem; bottom: 1.25rem; display: flex; gap: 1.4rem; align-items: center; padding: .85rem 1rem; color: var(--board); border: 1px solid var(--board); background: var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,.32); font-size: .82rem; cursor: pointer; }
+.cart-dock strong { padding-left: 1rem; border-left: 1px solid rgba(17,17,15,.35); text-transform: uppercase; letter-spacing: .08em; }
+.order-dialog { width: min(100% - 2rem, 980px); max-height: min(90vh, 860px); padding: 0; color: var(--chalk); border: 1px solid var(--line); background: var(--board); box-shadow: 0 30px 80px rgba(0,0,0,.66); }
+.order-dialog::backdrop { background: rgba(0,0,0,.72); backdrop-filter: blur(4px); }
+.order-dialog-inner { position: relative; padding: clamp(1.3rem, 4vw, 3rem); }
+.dialog-close { position: absolute; top: .8rem; right: .8rem; width: 42px; height: 42px; color: var(--chalk); border: 1px solid var(--line); background: transparent; font-size: 1.8rem; line-height: 1; cursor: pointer; }
+.order-dialog-heading h2 { margin: 0 0 1.8rem; font-size: clamp(2.8rem, 6vw, 4.7rem); }
+.order-layout { display: grid; grid-template-columns: 1fr 1fr; border: var(--border-thin); }
+.cart-panel, .checkout-form { padding: 1.25rem; }
+.checkout-form { border-left: var(--border-thin); }
+.cart-line { display: flex; justify-content: space-between; gap: 1rem; padding: .85rem 0; border-bottom: 1px solid var(--faint); }
+.cart-line strong, .cart-line small { display: block; }
+.cart-line small { color: var(--muted); font-size: .7rem; }
+.cart-line-controls { display: flex; align-items: center; gap: .5rem; }
+.cart-line-controls button { width: 27px; height: 27px; color: var(--chalk); border: 1px solid var(--line); background: transparent; cursor: pointer; }
+.cart-line-controls b { min-width: 56px; color: var(--accent-bright); font-family: var(--font-display); text-align: right; }
+.cart-empty { color: var(--muted); }
+.order-totals { margin: 1.2rem 0 0; border-top: var(--border-thin); }
+.order-totals div { display: flex; justify-content: space-between; padding: .6rem 0; color: var(--muted); }
+.order-totals dd { margin: 0; color: var(--chalk); font-weight: 800; }
+.order-totals .total { color: var(--chalk); border-top: var(--border-thin); font-size: 1.15rem; }
+.order-totals .total dd { color: var(--accent-bright); }
+.checkout-form { display: grid; align-content: start; gap: .75rem; }
+.checkout-form label { display: grid; gap: .32rem; color: var(--muted); font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.checkout-form input, .checkout-form textarea { width: 100%; padding: .72rem; color: var(--chalk); border: 1px solid var(--line); border-radius: 0; background: rgba(255,255,255,.03); font: inherit; letter-spacing: normal; text-transform: none; resize: vertical; }
+.form-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.form-note, .payment-note { margin: 0; color: var(--muted); font-size: .73rem; line-height: 1.5; }
+.checkout-status { min-height: 1.4rem; margin: 0; color: var(--accent-bright); font-size: .78rem; font-weight: 700; }
+.checkout-status.is-error { color: #ff9991; }
+.checkout-pay { width: 100%; border: 0; cursor: pointer; }
+.checkout-pay:disabled { color: rgba(17,17,15,.58); background: #817d74; cursor: not-allowed; }
 .menu-footnote { margin: 1.5rem 0 0; color: var(--muted); font-size: .78rem; text-align: center; }
 .menu-footnote code { color: var(--accent-bright); }
 
@@ -462,6 +498,7 @@ h2 em { color: var(--accent); font-style: normal; }
   .primary-nav { position: fixed; inset: var(--header-height) 0 auto; display: grid; padding: 1.2rem 1rem 1.6rem; border-bottom: var(--border-thin); background: rgba(17,17,15,.98); transform: translateY(-130%); visibility: hidden; transition: transform var(--transition), visibility var(--transition); }
   .primary-nav.is-open { transform: translateY(0); visibility: visible; }
   .primary-nav a { min-height: 45px; display: flex; align-items: center; padding-inline: 1rem; border-bottom: 1px solid var(--faint); }
+  .nav-order-button { width: calc(100% - 2rem); margin: 1rem; }
   .hero-grid { min-height: auto; grid-template-columns: 1fr; padding-top: 5rem; padding-bottom: 2rem; }
   .hero-copy { max-width: 680px; }
   .hero h1 { max-width: 100%; font-size: clamp(5rem, 18vw, 8rem); }
@@ -490,6 +527,11 @@ h2 em { color: var(--accent); font-style: normal; }
   .hero-tagline { flex-wrap: wrap; gap: .2rem .4rem; font-size: .92rem; }
   .hero-intro { width: min(100%, 330px); margin-bottom: 1.5rem; font-size: .95rem; }
   .button { width: 100%; justify-content: space-between; }
+  .cart-dock { right: .65rem; bottom: .65rem; left: .65rem; justify-content: space-between; gap: .6rem; }
+  .order-dialog { width: 100%; max-height: 100vh; min-height: 100vh; }
+  .order-dialog-inner { padding: 1.2rem; }
+  .order-layout { grid-template-columns: 1fr; }
+  .checkout-form { border-top: var(--border-thin); border-left: 0; }
   .hero-note { gap: .5rem; margin-top: 1.6rem; }
   .hero-art { margin-top: -1rem; }
   .hero-marquee > div { gap: 1.3rem; }

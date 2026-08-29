@@ -1,215 +1,4 @@
-/*
- * CHAI GALLERY MENU DATA
- * Edit item names and prices here. Use `prices: ["₹30", "₹45"]` for two sizes.
- * Illustration filenames are replaceable in assets/images/menu-art/.
- */
-const menu = [
-  {
-    id: "chai",
-    title: "Chai",
-    group: "beverages",
-    illustration: "hero-chai.png",
-    sizeLabels: ["M", "L"],
-    items: [
-      { name: "Adrak", prices: ["₹30", "₹45"] },
-      { name: "Rose", prices: ["₹30", "₹45"] },
-      { name: "Chocolate", prices: ["₹30", "₹45"] },
-      { name: "Gurh", prices: ["₹30", "₹45"] },
-      { name: "Elaichi", prices: ["₹35", "₹50"] },
-      { name: "Adrak + Elaichi", prices: ["₹35", "₹50"] },
-      { name: "Rajwadi", prices: ["₹35", "₹50"] },
-      { name: "Butter", prices: ["₹50", "₹70"] }
-    ]
-  },
-  {
-    id: "hot-coffee",
-    title: "Hot Coffee",
-    group: "beverages",
-    illustration: "hot-coffee.png",
-    items: [
-      { name: "Classic", price: "₹50" },
-      { name: "Americano", price: "₹50" },
-      { name: "Choco Mocha", price: "₹60" },
-      { name: "Caramel Bliss", price: "₹100" },
-      { name: "Hazelnut Delight", price: "₹100" },
-      { name: "Vanilla Brew", price: "₹100" },
-      { name: "Belgian Choco", price: "₹120" },
-      { name: "Biscoff Rush", price: "₹120" },
-      { name: "Arabica Brew", price: "₹120" }
-    ]
-  },
-  {
-    id: "cold-coffee",
-    title: "Cold Coffee",
-    group: "beverages",
-    illustration: "cold-coffee.png",
-    items: [
-      { name: "Caramel Crown", price: "₹119" },
-      { name: "Hazel Bliss", price: "₹119" },
-      { name: "Vanilla Dream", price: "₹119" },
-      { name: "Arabica Classic", price: "₹129" },
-      { name: "Belgian Choco", price: "₹129" },
-      { name: "Biscoff Royal", price: "₹149" }
-    ]
-  },
-  {
-    id: "shakes",
-    title: "Shakes",
-    group: "beverages",
-    illustration: "shake.png",
-    items: [
-      { name: "Oreo", price: "₹119" },
-      { name: "Black Forest", price: "₹119" },
-      { name: "Vanilla", price: "₹119" },
-      { name: "Strawberry", price: "₹139" },
-      { name: "Kit Kat", price: "₹149" }
-    ]
-  },
-  {
-    id: "mojitos",
-    title: "Coolers",
-    group: "beverages",
-    illustration: "mojito.png",
-    items: [
-      { name: "Nimbu Pani", price: "₹49" },
-      { name: "Virgin Mojito", price: "₹99" },
-      { name: "Jaljeera Lemonade", price: "₹99" },
-      { name: "Masala Lemonade", price: "₹99" },
-      { name: "Green Apple Mojito", price: "₹99" },
-      { name: "Watermelon Mojito", price: "₹99" },
-      { name: "Cranberry Mojito", price: "₹99" }
-    ]
-  },
-  {
-    id: "burgers",
-    title: "Burgers",
-    group: "food",
-    illustration: "burger.png",
-    items: [
-      { name: "Aloo Tikki", price: "₹59" },
-      { name: "Grill", price: "₹69" },
-      { name: "Veg Burger", price: "₹79" },
-      { name: "Cheese", price: "₹99" },
-      { name: "Makhani", price: "₹119" },
-      { name: "Achari", price: "₹119" },
-      { name: "Monster King", price: "₹149" }
-    ]
-  },
-  {
-    id: "sandwiches",
-    title: "Sandwich",
-    group: "food",
-    illustration: "sandwich.png",
-    items: [
-      { name: "Tandoori Masala", price: "₹109" },
-      { name: "Special Makhani", price: "₹129" },
-      { name: "Cheesy Melt", price: "₹139" },
-      { name: "Chatpata Achari", price: "₹149" },
-      { name: "Pizza-Style", price: "₹159" }
-    ]
-  },
-  {
-    id: "sub-sandwiches",
-    title: "Sub Sandwich",
-    group: "food",
-    illustration: "sub-sandwich.png",
-    items: [
-      { name: "Creamy Makhani", price: "₹230" },
-      { name: "Chatpata Achari", price: "₹230" },
-      { name: "Smoky BBQ", price: "₹270" },
-      { name: "Maharaja Jumbo", price: "₹300" }
-    ]
-  },
-  {
-    id: "pizza",
-    title: "Pizza",
-    group: "food",
-    illustration: "pizza.png",
-    sizeLabels: ["R", "M"],
-    items: [
-      { name: "Onion Crunch Pizza", prices: ["₹149", "₹229"] },
-      { name: "Capsicum Delight", prices: ["₹149", "₹229"] },
-      { name: "Tomato Twist", prices: ["₹149", "₹229"] },
-      { name: "Golden Corn Delight", prices: ["₹149", "₹229"] },
-      { name: "Cheesy Classic", prices: ["₹169", "₹249"] },
-      { name: "Paneer Supreme", prices: ["₹169", "₹249"] },
-      { name: "Monster King", prices: ["₹219", "₹299"] }
-    ]
-  },
-  {
-    id: "pasta",
-    title: "Pasta",
-    group: "food",
-    illustration: "pasta.png",
-    sizeLabels: ["H", "F"],
-    items: [
-      { name: "Red Sauce", prices: ["₹149", "₹219"] },
-      { name: "White Sauce", prices: ["₹159", "₹229"] },
-      { name: "Mix Sauce", prices: ["₹169", "₹239"] }
-    ]
-  },
-  {
-    id: "maggi",
-    title: "Maggi",
-    group: "food",
-    illustration: "maggi.png",
-    items: [
-      { name: "Plain Maggi", price: "₹49" },
-      { name: "Double Maggi", price: "₹89" },
-      { name: "Veggies Maggi", price: "₹99" },
-      { name: "Cheese Maggi", price: "₹119" }
-    ]
-  },
-  {
-    id: "garlic-bread",
-    title: "Garlic Bread",
-    group: "food",
-    illustration: "garlic-bread.png",
-    items: [
-      { name: "Garlic Bread", price: "₹129" },
-      { name: "Garlic Toast", price: "₹129" },
-      { name: "Stuffed Garlic Bread", price: "₹149" },
-      { name: "Paneer Garlic Bread", price: "₹169" }
-    ]
-  },
-  {
-    id: "fries",
-    title: "Fries",
-    group: "food",
-    illustration: "fries.png",
-    items: [
-      { name: "Plain Fries", price: "₹99" },
-      { name: "Tandoori Fries", price: "₹119" },
-      { name: "Peri Peri Fries", price: "₹129" },
-      { name: "Cheese Fries", price: "₹139" },
-      { name: "Mint Fries", price: "₹149" }
-    ]
-  },
-  {
-    id: "others",
-    title: "Others",
-    group: "food",
-    illustration: "hero-chai.png",
-    items: [
-      { name: "Maska Bun", price: "₹40" },
-      { name: "Cake Rusk", price: "₹20" },
-      { name: "Fan", price: "₹10" },
-      { name: "Bisleri", price: "MRP" }
-    ]
-  },
-  {
-    id: "desserts",
-    title: "Desserts",
-    group: "food",
-    illustration: "desserts.png",
-    items: [
-      { name: "Warm Chocolate Brownie", price: "₹79" },
-      { name: "Chocolate Melt Sandwich", price: "₹119" },
-      { name: "Milkybar White Chocolate Sandwich", price: "₹129" },
-      { name: "Brownie Bliss with Ice Cream", price: "₹139" }
-    ]
-  }
-];
+import { menu } from "./catalog.js";
 
 const favourites = [
   { id: "chai", title: "Adrak Elaichi Chai", note: "Warm, familiar and made for one more round." },
@@ -232,20 +21,21 @@ function renderMenu(filter = "all") {
   const visibleMenu = filter === "all" ? menu : menu.filter((category) => category.group === filter);
   grid.innerHTML = visibleMenu.map((category, index) => {
     const hasSizes = Array.isArray(category.sizeLabels);
-    const rows = category.items.map((item) => {
+    const rows = category.items.map((item, itemIndex) => {
       if (hasSizes) {
         return `
           <div class="menu-row has-sizes">
             <span class="menu-item-name">${escapeHTML(item.name)}</span>
             <span class="menu-dots" aria-hidden="true"></span>
-            ${item.prices.map((price) => `<span class="menu-price">${escapeHTML(price)}</span>`).join("")}
+            ${item.prices.map((price, sizeIndex) => `<button class="menu-price menu-add" type="button" data-product-id="${category.id}:${itemIndex}:${sizeIndex}" aria-label="Add ${escapeHTML(item.name)}, ${escapeHTML(category.sizeLabels[sizeIndex])}, ${escapeHTML(price)} to order">${escapeHTML(price)} <b>+</b></button>`).join("")}
           </div>`;
       }
+      const canOrder = /^₹\d+$/.test(item.price);
       return `
         <div class="menu-row">
           <span class="menu-item-name">${escapeHTML(item.name)}</span>
           <span class="menu-dots" aria-hidden="true"></span>
-          <span class="menu-price">${escapeHTML(item.price)}</span>
+          ${canOrder ? `<button class="menu-price menu-add" type="button" data-product-id="${category.id}:${itemIndex}:0" aria-label="Add ${escapeHTML(item.name)}, ${escapeHTML(item.price)} to order">${escapeHTML(item.price)} <b>+</b></button>` : `<span class="menu-price">${escapeHTML(item.price)}</span>`}
         </div>`;
     }).join("");
 
@@ -274,6 +64,114 @@ function renderMenu(filter = "all") {
       window.setTimeout(() => card.classList.remove("is-entering"), index * 32);
     });
   });
+}
+
+const cart = new Map();
+const currency = new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 });
+const apiBase = String(window.CHAI_GALLERY_CONFIG?.apiBase || "").replace(/\/$/, "");
+
+function productFromId(id) {
+  const [categoryId, itemIndexText, variantIndexText] = String(id).split(":");
+  const category = menu.find((entry) => entry.id === categoryId);
+  const item = category?.items[Number(itemIndexText)];
+  const variantIndex = Number(variantIndexText);
+  if (!category || !item || !Number.isInteger(variantIndex)) return null;
+  const rawPrice = Array.isArray(item.prices) ? item.prices[variantIndex] : item.price;
+  const price = Number(String(rawPrice).replace(/[^0-9]/g, ""));
+  if (!Number.isFinite(price) || price <= 0) return null;
+  const variant = category.sizeLabels?.[variantIndex];
+  return { id, name: item.name, category: category.title, variant, price };
+}
+
+function cartEntries() {
+  return [...cart.entries()].map(([id, quantity]) => ({ ...productFromId(id), quantity })).filter((item) => item.id);
+}
+
+function updateCartUI() {
+  const entries = cartEntries();
+  const count = entries.reduce((total, item) => total + item.quantity, 0);
+  const subtotal = entries.reduce((total, item) => total + item.price * item.quantity, 0);
+  const dock = document.querySelector(".cart-dock");
+  document.querySelectorAll("[data-cart-count]").forEach((node) => { node.textContent = count; });
+  if (dock) dock.hidden = count === 0;
+  const summary = document.querySelector("[data-cart-summary]");
+  if (summary) summary.textContent = count ? `${count} item${count === 1 ? "" : "s"} · ${currency.format(subtotal)}` : "Your cart is empty";
+  const items = document.querySelector("[data-cart-items]");
+  const empty = document.querySelector("[data-cart-empty]");
+  const subtotalNode = document.querySelector("[data-subtotal]");
+  const totalNode = document.querySelector("[data-total]");
+  const deliveryNode = document.querySelector("[data-delivery]");
+  const payButton = document.querySelector("[data-pay-button]");
+  if (items) items.innerHTML = entries.map((item) => `<article class="cart-line"><div><strong>${escapeHTML(item.name)}</strong><small>${escapeHTML(item.category)}${item.variant ? ` · ${escapeHTML(item.variant)}` : ""}</small></div><div class="cart-line-controls"><button type="button" data-cart-change="${item.id}" data-delta="-1" aria-label="Remove one ${escapeHTML(item.name)}">−</button><span>${item.quantity}</span><button type="button" data-cart-change="${item.id}" data-delta="1" aria-label="Add one ${escapeHTML(item.name)}">+</button><b>${currency.format(item.price * item.quantity)}</b></div></article>`).join("");
+  if (empty) empty.hidden = entries.length > 0;
+  if (subtotalNode) subtotalNode.textContent = currency.format(subtotal);
+  if (deliveryNode) deliveryNode.textContent = entries.length ? "Calculated from pincode" : "—";
+  if (totalNode) totalNode.textContent = currency.format(subtotal);
+  if (payButton) payButton.disabled = !entries.length || !apiBase;
+}
+
+function setCheckoutStatus(message, isError = false) {
+  const status = document.querySelector("[data-checkout-status]");
+  if (!status) return;
+  status.textContent = message;
+  status.classList.toggle("is-error", isError);
+}
+
+function initOrdering() {
+  const dialog = document.querySelector("[data-order-dialog]");
+  const form = document.querySelector("[data-checkout-form]");
+  if (!dialog || !form) return;
+  document.addEventListener("click", (event) => {
+    const addButton = event.target.closest("[data-product-id]");
+    if (addButton) {
+      const id = addButton.dataset.productId;
+      if (productFromId(id)) cart.set(id, (cart.get(id) || 0) + 1);
+      updateCartUI();
+      return;
+    }
+    const cartChange = event.target.closest("[data-cart-change]");
+    if (cartChange) {
+      const id = cartChange.dataset.cartChange;
+      const next = (cart.get(id) || 0) + Number(cartChange.dataset.delta);
+      if (next > 0) cart.set(id, next); else cart.delete(id);
+      updateCartUI();
+      return;
+    }
+    if (event.target.closest("[data-open-cart]")) {
+      dialog.showModal();
+      if (!apiBase) setCheckoutStatus("Online payments are being configured. Please try again soon.", true);
+    }
+    if (event.target.closest("[data-close-cart]")) dialog.close();
+  });
+  dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!apiBase || !cart.size) return;
+    const payButton = form.querySelector("[data-pay-button]");
+    const formData = new FormData(form);
+    const customer = Object.fromEntries(formData.entries());
+    payButton.disabled = true;
+    setCheckoutStatus("Checking delivery and preparing secure payment…");
+    try {
+      const response = await fetch(`${apiBase}/create-order`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ items: cartEntries().map(({ id, quantity }) => ({ id, quantity })), customer }) });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || "Unable to start payment.");
+      if (!window.Razorpay) throw new Error("Payment service did not load. Please try again.");
+      const checkout = new window.Razorpay({ key: data.keyId, amount: data.amount, currency: "INR", name: "Chai Gallery", description: `Food order · ${data.deliveryLabel}`, order_id: data.orderId, prefill: { name: customer.name, contact: customer.phone }, theme: { color: "#d98a3a" }, handler: async (payment) => {
+        setCheckoutStatus("Verifying your payment…");
+        const verified = await fetch(`${apiBase}/verify-payment`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payment) });
+        const result = await verified.json();
+        if (!verified.ok) throw new Error(result.error || "Payment verification failed.");
+        cart.clear(); updateCartUI(); form.reset();
+        setCheckoutStatus(`Order ${result.orderNumber} confirmed. We’ll start preparing it shortly.`);
+      }, modal: { ondismiss: () => { payButton.disabled = false; setCheckoutStatus("Payment cancelled. Your cart is still saved."); } } });
+      checkout.open();
+    } catch (error) {
+      setCheckoutStatus(error.message || "Something went wrong. Please try again.", true);
+      payButton.disabled = false;
+    }
+  });
+  updateCartUI();
 }
 
 function renderFavourites() {
@@ -448,4 +346,5 @@ initReveal();
 initActiveNavigation();
 initDisabledLinks();
 initMenuZoom();
+initOrdering();
 document.querySelector("[data-year]").textContent = new Date().getFullYear();

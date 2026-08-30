@@ -281,6 +281,8 @@ h2 em { color: var(--accent); font-style: normal; }
 .menu-add:hover, .menu-add:focus-visible { color: var(--accent-bright); }
 .nav-order-button { min-height: 38px; padding: .45rem .75rem; color: var(--board); border: 0; background: var(--accent); font-size: .68rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
 .nav-order-button span { display: inline-grid; min-width: 1.4rem; height: 1.4rem; place-items: center; margin-left: .35rem; color: var(--chalk); border-radius: 50%; background: var(--board); }
+.button-order { color: var(--board); border: 1px solid var(--accent); background: var(--accent); cursor: pointer; }
+.button-order:hover, .button-order:focus-visible { color: var(--chalk-bright); border-color: var(--accent-bright); background: var(--accent-bright); transform: translateY(-2px); }
 .cart-dock { position: fixed; z-index: 80; right: 1.25rem; bottom: 1.25rem; display: flex; gap: 1.4rem; align-items: center; padding: .85rem 1rem; color: var(--board); border: 1px solid var(--board); background: var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,.32); font-size: .82rem; cursor: pointer; }
 .cart-dock strong { padding-left: 1rem; border-left: 1px solid rgba(17,17,15,.35); text-transform: uppercase; letter-spacing: .08em; }
 .order-dialog { width: min(100% - 2rem, 980px); max-height: min(90vh, 860px); padding: 0; color: var(--chalk); border: 1px solid var(--line); background: var(--board); box-shadow: 0 30px 80px rgba(0,0,0,.66); }

@@ -147,7 +147,7 @@ Import the repository, select “Other” as the framework preset, leave the bui
 
 ## Online orders and Razorpay payments (development)
 
-The `dev` branch is the safe staging version. It is configured for `https://dev.chaigallery.in`, which is served by the existing Cloudflare Worker named `chai-gallery-dev`, and expects its order API at `https://api.dev.chaigallery.in`.
+The `dev` branch is the safe staging version. It is configured for `https://dev.chaigallery.in`, which is served by the existing Cloudflare Worker named `chai-gallery-dev`. During testing, checkout uses `https://chai-gallery-orders-dev.passishubham1.workers.dev`; add `api.dev.chaigallery.in` only when you are ready for the production-style API hostname.
 
 The checkout securely sends only product IDs and quantities to the API. The Cloudflare Worker recalculates menu prices, validates the delivery postcode, creates the Razorpay order, verifies the payment signature and checks Razorpay reports the payment as captured before marking the Supabase order as paid. Never put the Razorpay key secret or Supabase service-role key in this website.
 
@@ -156,7 +156,7 @@ The checkout securely sends only product IDs and quantities to the API. The Clou
 1. Create a Supabase project, open its SQL editor, and run [`worker/schema.sql`](worker/schema.sql).
 2. In Razorpay, create **Test Mode** API keys for development.
 3. The existing `chai-gallery-dev` Worker already serves `dev.chaigallery.in`. Do not create a Cloudflare Pages project. The GitHub workflow deploys the website assets directly to that Worker.
-4. Deploy the separate order API from `worker/` using `npx wrangler deploy --env dev`, then add the custom domain `api.dev.chaigallery.in`. Create a proxied DNS record for `api` when Cloudflare asks for it.
+4. Deploy the separate order API from `worker/` using `npx wrangler deploy --env dev`. For this development build, its `workers.dev` URL is used automatically. Optionally add `api.dev.chaigallery.in` later for the production-style API hostname.
 5. Set the four development Worker secrets. Run each command from `worker/`; do not commit the values:
 
    ```powershell

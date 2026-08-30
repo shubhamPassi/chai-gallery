@@ -1,6 +1,6 @@
 # Chai Gallery — Static Website
 
-A responsive, production-ready single-page website for Chai Gallery in Hari Nagar, West Delhi. It uses plain HTML, CSS, and JavaScript, so no build step or backend is required.
+A responsive Chai Gallery website for Hari Nagar, West Delhi. The website itself uses plain HTML, CSS and JavaScript; online orders use the accompanying Cloudflare Worker so payment secrets remain private.
 
 ## Project structure
 
@@ -10,7 +10,12 @@ chai-gallery/
 ├── css/
 │   └── style.css
 ├── js/
+│   ├── catalog.js
 │   └── script.js
+├── worker/
+│   ├── src/index.js
+│   ├── schema.sql
+│   └── wrangler.toml
 ├── assets/
 │   ├── images/
 │   │   ├── chai-gallery-logo.png
@@ -54,11 +59,13 @@ chai-gallery/
 The simplest option is to open `index.html` directly in a browser. For a local web server (recommended):
 
 ```powershell
-cd "D:\practice\chai gallery menu\chai-gallery"
+cd "D:\practice\chai gallery\chai-gallery"
 python -m http.server 8080
 ```
 
 Then visit `http://localhost:8080`.
+
+If a server is already running in the wrong folder, press `Ctrl+C` before running the commands above.
 
 ## Change menu items or prices
 

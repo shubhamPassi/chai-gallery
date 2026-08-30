@@ -147,7 +147,7 @@ Import the repository, select “Other” as the framework preset, leave the bui
 
 ## Online orders and Razorpay payments (development)
 
-The `dev` branch is the safe staging version. It is configured for `https://dev.chaigallery.in` and expects its order API at `https://api.dev.chaigallery.in`.
+The `dev` branch is the safe staging version. It is configured for `https://dev.chaigallery.in`, which is served by the existing Cloudflare Worker named `chai-gallery-dev`, and expects its order API at `https://api.dev.chaigallery.in`.
 
 The checkout securely sends only product IDs and quantities to the API. The Cloudflare Worker recalculates menu prices, validates the delivery postcode, creates the Razorpay order, verifies the payment signature and checks Razorpay reports the payment as captured before marking the Supabase order as paid. Never put the Razorpay key secret or Supabase service-role key in this website.
 
@@ -155,8 +155,8 @@ The checkout securely sends only product IDs and quantities to the API. The Clou
 
 1. Create a Supabase project, open its SQL editor, and run [`worker/schema.sql`](worker/schema.sql).
 2. In Razorpay, create **Test Mode** API keys for development.
-3. Create a Cloudflare Pages project called `chai-gallery-dev` and add `dev.chaigallery.in` as its custom domain. In Cloudflare DNS, create a proxied CNAME for `dev` to the Pages hostname Cloudflare provides.
-4. Deploy the Worker from `worker/` using `npx wrangler deploy --env dev`, then add the custom domain `api.dev.chaigallery.in`. Create a proxied DNS record for `api` when Cloudflare asks for it.
+3. The existing `chai-gallery-dev` Worker already serves `dev.chaigallery.in`. Do not create a Cloudflare Pages project. The GitHub workflow deploys the website assets directly to that Worker.
+4. Deploy the separate order API from `worker/` using `npx wrangler deploy --env dev`, then add the custom domain `api.dev.chaigallery.in`. Create a proxied DNS record for `api` when Cloudflare asks for it.
 5. Set the four development Worker secrets. Run each command from `worker/`; do not commit the values:
 
    ```powershell
@@ -166,7 +166,7 @@ The checkout securely sends only product IDs and quantities to the API. The Clou
    npx wrangler secret put SUPABASE_SERVICE_ROLE_KEY --env dev
    ```
 
-6. Add `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` as GitHub Actions secrets. The included workflow deploys both the development site and development API whenever `dev` is pushed.
+6. Add `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` as GitHub Actions secrets. The API token needs **Account → Workers Scripts → Edit** permission. The included workflow deploys both the development site and development API whenever `dev` is pushed.
 
 Before accepting live payments, replace the Razorpay test keys with live keys, set the final delivery zones in [`worker/src/index.js`](worker/src/index.js), and configure Razorpay webhooks (`payment.captured`, `payment.failed`, and `order.paid`) to a protected backend endpoint.
 

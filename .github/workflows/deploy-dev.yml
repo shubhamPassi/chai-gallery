@@ -16,8 +16,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Deploy dev.chaigallery.in to Cloudflare Pages
-        run: npx wrangler pages deploy . --project-name=chai-gallery-dev --branch=dev --commit-dirty=true
+      - name: Deploy dev.chaigallery.in to the existing Cloudflare Worker
+        run: npx wrangler deploy --config wrangler.dev.toml
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

@@ -1,0 +1,7 @@
+.git/
+.github/
+.assetsignore
+wrangler.dev.toml
+worker/
+README.md
+CNAME

@@ -170,6 +170,24 @@ The checkout securely sends only product IDs and quantities to the API. The Clou
 
 Before accepting live payments, replace the Razorpay test keys with live keys, set the final delivery zones in [`worker/src/index.js`](worker/src/index.js), and configure Razorpay webhooks (`payment.captured`, `payment.failed`, and `order.paid`) to a protected backend endpoint.
 
+## Admin order desk
+
+Open `/admin.html` on the development website to sign in and manage orders. It lists paid orders, delivery details, item lines and totals, and lets the authorised Chai Gallery account move an order through preparing, out for delivery, completed or cancelled.
+
+### Admin setup
+
+1. In Supabase, go to **Authentication → Users → Add user** and create your own email-and-password user. Do not enable self-service sign-ups for this private admin account.
+2. In Supabase **Settings → API Keys**, copy the project URL and **Publishable key**. Add them to `js/admin-config.js`. Publishable keys are designed for browser use; never put a Supabase Secret key here.
+3. Store the same admin email as a Cloudflare Worker secret:
+
+   ```powershell
+   npx wrangler secret put ADMIN_EMAIL --env dev
+   ```
+
+   Use the exact email address created in step 1. This ensures even another Supabase user cannot read orders.
+
+The dashboard authentication token is checked by the Worker, and customer order data is returned only to the configured `ADMIN_EMAIL` account.
+
 ## Before launch
 
 - Confirm all menu prices and availability.

@@ -314,6 +314,47 @@ h2 em { color: var(--accent); font-style: normal; }
 .checkout-status.is-error { color: #ff9991; }
 .checkout-pay { width: 100%; border: 0; cursor: pointer; }
 .checkout-pay:disabled { color: rgba(17,17,15,.58); background: #817d74; cursor: not-allowed; }
+.admin-body { min-height: 100vh; }
+.admin-shell { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; padding: 3rem 0 5rem; }
+.admin-brand { display: inline-flex; align-items: center; gap: .75rem; margin-bottom: 3.5rem; }
+.admin-brand img { width: 52px; height: 52px; object-fit: contain; border: var(--border-thin); background: var(--chalk); }
+.admin-brand strong, .admin-brand small { display: block; font-family: var(--font-display); font-weight: 900; letter-spacing: .09em; }
+.admin-brand small { margin-top: .25rem; color: var(--accent); font-family: var(--font-body); font-size: .6rem; }
+.admin-login { width: min(100%, 480px); padding: clamp(1.5rem, 5vw, 3rem); border: var(--border-thin); background: var(--board-soft); }
+.admin-login h1, .admin-header h1 { margin-bottom: 1rem; font-size: clamp(3.5rem, 8vw, 6rem); }
+.admin-login > p:not(.eyebrow) { color: var(--muted); }
+.admin-login form { display: grid; gap: 1rem; margin-top: 2rem; }
+.admin-login label { display: grid; gap: .35rem; color: var(--muted); font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.admin-login input, .admin-order select { color: var(--chalk); border: 1px solid var(--line); border-radius: 0; background: rgba(255,255,255,.04); }
+.admin-login input { padding: .8rem; font: inherit; }
+.admin-login .button { width: 100%; border: 0; cursor: pointer; }
+.admin-login .button:disabled { cursor: wait; opacity: .7; }
+.admin-header { display: flex; justify-content: space-between; gap: 1.5rem; align-items: end; margin-bottom: 1.4rem; }
+.admin-header .eyebrow { margin-bottom: .75rem; }
+.admin-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+.admin-actions .button { min-height: 42px; cursor: pointer; }
+.admin-message { min-height: 1.3rem; margin: 0 0 1rem; color: var(--accent-bright); font-size: .8rem; font-weight: 700; }
+.admin-message.is-error { color: #ff9991; }
+.order-filters { display: flex; flex-wrap: wrap; gap: .55rem; margin-bottom: 1.4rem; }
+.order-filters button { min-height: 40px; padding: .5rem .85rem; color: var(--muted); border: 1px solid var(--line); background: transparent; font: inherit; font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+.order-filters button.is-active { color: var(--board); border-color: var(--accent); background: var(--accent); }
+.admin-orders { display: grid; gap: 1rem; }
+.admin-order { border: var(--border-thin); background: var(--board-soft); }
+.admin-order > header, .admin-order > footer { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 1.2rem; border-bottom: var(--border-thin); }
+.admin-order > footer { border-top: var(--border-thin); border-bottom: 0; }
+.order-number { display: block; color: var(--accent-bright); font-family: var(--font-display); font-size: 1.25rem; font-weight: 900; letter-spacing: .08em; }
+.admin-order time { color: var(--muted); font-size: .72rem; }
+.order-status { padding: .3rem .55rem; font-size: .64rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.status-paid { color: #181815; background: #e8c067; }.status-preparing { color: #181815; background: #e99a50; }.status-out_for_delivery { color: #181815; background: #7ec8de; }.status-completed { color: #181815; background: #8fc98e; }.status-cancelled { color: var(--chalk); background: #a75454; }
+.admin-order-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1.5rem; padding: 1.25rem; }
+.admin-order h2 { margin-bottom: .8rem; color: var(--chalk); font-family: var(--font-body); font-size: 1.1rem; letter-spacing: 0; text-transform: none; }
+.admin-order p { margin: 0; color: var(--muted); font-size: .86rem; line-height: 1.6; white-space: pre-line; }
+.admin-order p a { color: var(--accent-bright); text-decoration: underline; }
+.order-note { margin-top: .75rem !important; padding: .65rem; border-left: 2px solid var(--accent); background: rgba(217,138,58,.08); }
+.admin-items { display: grid; gap: .4rem; margin: 0 0 1rem; padding: 0 0 1rem; border-bottom: var(--border-thin); list-style: none; }
+.admin-items li { display: flex; justify-content: space-between; gap: 1rem; color: var(--chalk); font-size: .83rem; }.admin-items span { color: var(--muted); white-space: nowrap; }
+.admin-order dl { margin: 0; }.admin-order dl div { display: flex; justify-content: space-between; padding: .3rem 0; color: var(--muted); font-size: .8rem; }.admin-order dd { margin: 0; color: var(--chalk); font-weight: 800; }.admin-order .admin-total { margin-top: .3rem; padding-top: .6rem; border-top: var(--border-thin); color: var(--chalk); }.admin-order .admin-total dd { color: var(--accent-bright); font-size: 1rem; }
+.admin-order footer label { display: flex; align-items: center; gap: .65rem; color: var(--muted); font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }.admin-order select { padding: .6rem; font: inherit; font-size: .8rem; text-transform: capitalize; cursor: pointer; }.admin-empty { padding: 2rem; color: var(--muted); border: var(--border-thin); text-align: center; }
 .menu-footnote { margin: 1.5rem 0 0; color: var(--muted); font-size: .78rem; text-align: center; }
 .menu-footnote code { color: var(--accent-bright); }
 
@@ -534,6 +575,11 @@ h2 em { color: var(--accent); font-style: normal; }
   .order-dialog-inner { padding: 1.2rem; }
   .order-layout { grid-template-columns: 1fr; }
   .checkout-form { border-top: var(--border-thin); border-left: 0; }
+  .admin-shell { width: min(100% - 1.25rem, 1180px); padding-top: 1.5rem; }
+  .admin-brand { margin-bottom: 2rem; }
+  .admin-header { align-items: start; flex-direction: column; }
+  .admin-order-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .admin-order > header, .admin-order > footer { align-items: start; flex-direction: column; }
   .hero-note { gap: .5rem; margin-top: 1.6rem; }
   .hero-art { margin-top: -1rem; }
   .hero-marquee > div { gap: 1.3rem; }

@@ -7,7 +7,7 @@ compatibility_date = "2026-08-30"
 ALLOWED_ORIGINS = "https://www.chaigallery.in,https://chaigallery.in"
 
 [secrets]
-required = ["RAZORPAY_KEY_ID", "RAZORPAY_KEY_SECRET", "SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY"]
+required = ["RAZORPAY_KEY_ID", "RAZORPAY_KEY_SECRET", "SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY", "ADMIN_EMAIL"]
 
 [env.dev]
 name = "chai-gallery-orders-dev"

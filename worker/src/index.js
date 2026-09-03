@@ -28,7 +28,7 @@ const json = (data, status = 200, headers = {}) => new Response(JSON.stringify(d
 function corsHeaders(request, env) {
   const origin = request.headers.get("Origin") || "";
   const allowed = String(env.ALLOWED_ORIGINS || "https://www.chaigallery.in,https://chaigallery.in").split(",").map((value) => value.trim());
-  return allowed.includes(origin) ? { "Access-Control-Allow-Origin": origin, Vary: "Origin", "Access-Control-Allow-Headers": "Content-Type", "Access-Control-Allow-Methods": "POST, OPTIONS" } : {};
+  return allowed.includes(origin) ? { "Access-Control-Allow-Origin": origin, Vary: "Origin", "Access-Control-Allow-Headers": "Authorization, Content-Type", "Access-Control-Allow-Methods": "GET, POST, OPTIONS" } : {};
 }
 
 function validCustomer(customer) {
@@ -72,6 +72,16 @@ async function supabase(path, env, init = {}) {
   return response.status === 204 ? null : response.json();
 }
 
+async function requireAdmin(request, env) {
+  const authorization = request.headers.get("Authorization");
+  if (!authorization?.startsWith("Bearer ")) throw new Error("Admin sign-in is required.");
+  const response = await fetch(`${env.SUPABASE_URL}/auth/v1/user`, { headers: { apikey: env.SUPABASE_SERVICE_ROLE_KEY, Authorization: authorization } });
+  if (!response.ok) throw new Error("Your admin session has expired. Please sign in again.");
+  const user = await response.json();
+  if (!env.ADMIN_EMAIL || String(user.email || "").toLowerCase() !== env.ADMIN_EMAIL.toLowerCase()) throw new Error("This account is not authorised to view orders.");
+  return user;
+}
+
 async function hmacHex(value, secret) {
   const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(secret), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
   const signature = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(value));
@@ -90,8 +100,22 @@ export default {
     const cors = corsHeaders(request, env);
     if (request.method === "OPTIONS") return new Response(null, { headers: cors });
     if (!Object.keys(cors).length) return json({ error: "This website is not permitted to use the order API." }, 403);
-    if (request.method !== "POST") return json({ error: "Not found." }, 404, cors);
     try {
+      if (request.method === "GET" && request.url.endsWith("/admin/orders")) {
+        await requireAdmin(request, env);
+        const orders = await supabase("orders?select=id,order_number,status,customer_name,customer_phone,delivery_address,landmark,pincode,instructions,items,subtotal,delivery_fee,total,created_at,paid_at&order=created_at.desc&limit=100", env);
+        return json({ orders }, 200, cors);
+      }
+      if (request.method === "POST" && /\/admin\/orders\/\d+\/status$/.test(new URL(request.url).pathname)) {
+        await requireAdmin(request, env);
+        const { status } = await request.json();
+        const allowedStatuses = new Set(["paid", "preparing", "out_for_delivery", "completed", "cancelled"]);
+        if (!allowedStatuses.has(status)) return json({ error: "Invalid order status." }, 400, cors);
+        const id = new URL(request.url).pathname.split("/")[3];
+        const updated = await supabase(`orders?id=eq.${encodeURIComponent(id)}`, env, { method: "PATCH", body: JSON.stringify({ status }) });
+        return json({ order: updated?.[0] || null }, 200, cors);
+      }
+      if (request.method !== "POST") return json({ error: "Not found." }, 404, cors);
       if (request.url.endsWith("/create-order")) {
         const { items, customer } = await request.json();
         if (!validCustomer(customer)) return json({ error: "Please complete your name, 10-digit mobile number, address and pincode." }, 400, cors);

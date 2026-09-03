@@ -158,7 +158,7 @@ function initOrdering() {
       if (!response.ok) throw new Error(data.error || "Unable to start payment.");
       if (!window.Razorpay) throw new Error("Payment service did not load. Please try again.");
       const restoreOrderDialog = () => { if (!dialog.open) dialog.showModal(); };
-      const checkout = new window.Razorpay({ key: data.keyId, amount: data.amount, currency: "INR", name: "Chai Gallery", description: `Food order · ${data.deliveryLabel}`, order_id: data.orderId, prefill: { name: customer.name, contact: customer.phone }, theme: { color: "#d98a3a" }, handler: async (payment) => {
+      const checkout = new window.Razorpay({ key: data.keyId, amount: data.amount, currency: "INR", name: "Chai Gallery", description: `Food order · ${data.deliveryLabel}`, order_id: data.orderId, prefill: { name: customer.name }, theme: { color: "#d98a3a" }, handler: async (payment) => {
         try {
           setCheckoutStatus("Verifying your payment…");
           const verified = await fetch(`${apiBase}/verify-payment`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payment) });

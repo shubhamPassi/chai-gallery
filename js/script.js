@@ -157,14 +157,22 @@ function initOrdering() {
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Unable to start payment.");
       if (!window.Razorpay) throw new Error("Payment service did not load. Please try again.");
+      const restoreOrderDialog = () => { if (!dialog.open) dialog.showModal(); };
       const checkout = new window.Razorpay({ key: data.keyId, amount: data.amount, currency: "INR", name: "Chai Gallery", description: `Food order · ${data.deliveryLabel}`, order_id: data.orderId, prefill: { name: customer.name, contact: customer.phone }, theme: { color: "#d98a3a" }, handler: async (payment) => {
-        setCheckoutStatus("Verifying your payment…");
-        const verified = await fetch(`${apiBase}/verify-payment`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payment) });
-        const result = await verified.json();
-        if (!verified.ok) throw new Error(result.error || "Payment verification failed.");
-        cart.clear(); updateCartUI(); form.reset();
-        setCheckoutStatus(`Order ${result.orderNumber} confirmed. We’ll start preparing it shortly.`);
-      }, modal: { ondismiss: () => { payButton.disabled = false; setCheckoutStatus("Payment cancelled. Your cart is still saved."); } } });
+        try {
+          setCheckoutStatus("Verifying your payment…");
+          const verified = await fetch(`${apiBase}/verify-payment`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payment) });
+          const result = await verified.json();
+          if (!verified.ok) throw new Error(result.error || "Payment verification failed.");
+          cart.clear(); updateCartUI(); form.reset(); restoreOrderDialog();
+          setCheckoutStatus(`Order ${result.orderNumber} confirmed. We’ll start preparing it shortly.`);
+        } catch (verificationError) {
+          restoreOrderDialog();
+          setCheckoutStatus(verificationError.message || "Payment could not be verified. Please contact the cafe if you were charged.", true);
+          payButton.disabled = false;
+        }
+      }, modal: { ondismiss: () => { restoreOrderDialog(); payButton.disabled = false; setCheckoutStatus("Payment cancelled. Your cart is still saved."); } } });
+      dialog.close();
       checkout.open();
     } catch (error) {
       setCheckoutStatus(error.message || "Something went wrong. Please try again.", true);

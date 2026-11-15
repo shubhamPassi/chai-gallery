@@ -420,11 +420,11 @@ h2 em { color: var(--accent); font-style: normal; }
 
 .cta-section { color: var(--board); background: var(--accent); }
 .cta-inner { position: relative; padding-block: clamp(5.5rem, 12vw, 9rem); text-align: center; }
-.contact-highlight a { display: inline-flex; flex-direction: column; gap: .5rem; max-width: 100%; padding: 1.2rem clamp(1rem, 4vw, 2.5rem); color: var(--chalk-bright); background: var(--board); border: 2px solid var(--chalk-bright); box-shadow: 6px 6px 0 rgba(17,17,15,.22); text-decoration: none; }
+.contact-highlight a { display: inline-flex; flex-direction: column; align-items: center; gap: .65rem; max-width: 100%; padding: 1.35rem clamp(1.5rem, 5vw, 3rem); color: var(--chalk-bright); background: var(--board); border: 1px solid rgba(255,255,255,.35); border-radius: 12px; box-shadow: 0 8px 24px rgba(17,17,15,.18); text-decoration: none; transition: transform .2s, box-shadow .2s; }
 .contact-highlight span { font-weight: 800; text-transform: uppercase; letter-spacing: .12em; }
-.contact-highlight strong { font-size: clamp(1.7rem, 6vw, 3rem); line-height: 1.2; }
+.contact-highlight strong { font-size: clamp(1.7rem, 6vw, 2.6rem); line-height: 1.2; letter-spacing: .04em; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .contact-highlight small { font-size: .85rem; }
-.contact-highlight a:hover, .contact-highlight a:focus-visible { outline: 3px solid var(--board); outline-offset: 4px; }
+.contact-highlight a:hover, .contact-highlight a:focus-visible { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(17,17,15,.25); outline: 2px solid var(--chalk-bright); outline-offset: 4px; }
 .cta-inner .eyebrow { color: var(--board); }
 .cta-inner h2 { max-width: 950px; margin: 0 auto 1.5rem; font-size: clamp(4rem, 10vw, 9rem); }
 .cta-inner h2 em { color: var(--chalk-bright); }
